@@ -1,15 +1,14 @@
 
-Calib 6
+Set_Amplitude_high 2 2.0
+Set_Amplitude_low 2 0.1
 
-angleOffs 8 10.0
-dispAngleOffs 8 -1.0
+Set_Frequency_high 3 0.1
+Set_Frequency_low 3 0.005
 
-SpeedFilt 7 1
+Set_Filter_fast 4 0.1
+Set Filter_slow 4 0.01
 
-RglON  4 1
-RglOFF 4 0
-
-Rate    9 1000
-RateOFF 9 0
-
-
+Set_Sawtooth 5 1
+Set_Tectangle 5 2
+Set_Triangle 5 3
+Set_Sine 5 4

@@ -1,0 +1,35 @@
+Command: C:\Espressif\tools\python\v5.5.3\venv\Scripts\python.exe D:\dempi\espressifIDE\.espressif\v5.5.3\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\dempi\Desktop\Git\RtEnvLib\RtEnv6\build\RtEnv6.elf C:\Users\dempi\Desktop\Git\RtEnvLib\RtEnv6\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v5.5.3\venv\Scripts\python.exe' 'D:\dempi\espressifIDE\.espressif\v5.5.3\esp-idf\tools\idf.py' '-p' 'COM3'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15864
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF -128-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 19 2026 15:57:39[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bdf0h ( 48624) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=0001be18 vaddr=3ffb0000 size=02cf4h ( 11508) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=0001eb14 vaddr=40080000 size=01504h (  5380) load[0m
+[0;32mI (110) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=18ab8h (101048) map[0m
+[0;32mI (149) esp_image: segment 4: paddr=00038ae0 vaddr=40081504 size=0e058h ( 57432) load[0m
+[0;32mI (172) esp_image: segment 5: paddr=00046b40 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (180) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (180) boot: Disabling RNG early entropy source...[0m
+FuncGenLsg_1
+RtEnvHL V2.1

@@ -1,6 +1,9 @@
 
-idf_component_register( SRCS "PatzDemo1.cpp"
-                             
+idf_component_register( SRCS "Bsp1_Main.cpp"
+                             "Bsp1_GenModules.cpp"
+					 
+							 
+							 
   INCLUDE_DIRS "." 
                "../components/dsp" 
                "../components/RtEnvHL/commu"
