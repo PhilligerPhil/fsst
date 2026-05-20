@@ -2,22 +2,19 @@
 #include "RTEnvHL.h"
 #include "SvProtocol3.h"
 #include "Bsp1_GenModules.h"
-#include "Bsp2_Mean3.h"
+// #include "SineGenLsg.h"
+// #include "Empty_Tp1Ord.h"
 
 SvProtocol3 ua0;
 RampGen ram01;
 RectGen rec01;
-Mean3 m3_01;
-Mean3 m3_02;
 
-
-float ampl_ramp = 0.3;
-float ampl_rec = 0.2;
+float ampl = 1;
 float signal;
-int swt_01 = 1;
-
+int swt = 1;
 
 void setFrequency(float frequ);
+
 
 void CommandLoop()
 {
@@ -27,17 +24,17 @@ void CommandLoop()
     cmd = ua0.GetCommand();
     if (cmd == 2)
     {
-        //ampl = ua0.ReadF();
-        //ua0.SvMessage("Set Amplitude");
+        ampl = ua0.ReadF();
+        ua0.SvMessage("Set Amplitude");
     }
     if (cmd == 3)
     {
-        setFrequency(0.04);
+        setFrequency(ua0.ReadF());
         ua0.SvMessage("Set Frequency");
     }
     if (cmd == 4)
     {
-        swt_01 = ua0.ReadI16();
+        swt = ua0.ReadI16();
         ua0.SvMessage("Set Curve");
     }
     if (cmd == 5)
@@ -60,16 +57,12 @@ void ExecSignalChain()
 {
     ram01.CalcOneStep();
     rec01.CalcOneStep();
-    
-    /*
-    switch (swt_01)
-    {
-    case 1: signal = ram01._v1; break;
-    case 2: signal = rec01._v1; break;
-    }*/
 
-    m3_01.CalcOneStep(ram01._v1 * ampl_ramp);
-    m3_02.CalcOneStep(rec01._v1 * ampl_rec);
+    switch (swt)
+    {
+    case 1: signal = ram01._v1 * ampl; break;
+    case 2: signal = rec01._v1 * ampl; break;
+    }
 }
 
 void Monitor(void* arg)
@@ -78,10 +71,8 @@ void Monitor(void* arg)
     vTaskDelay(1); // 100Hz
     ExecSignalChain();
     if (ua0.acqON) {
-        ua0.WriteSvF(1, ram01._v1*ampl_ramp);
-        ua0.WriteSvF(2, rec01._v1*ampl_rec);
-        ua0.WriteSvF(3, m3_01._Y);
-        ua0.WriteSvF(4, m3_02._Y);
+        ua0.WriteSvF(1, signal);
+        ua0.WriteSvF(2, rec01._v1);
       ua0.Flush();
     }
   }

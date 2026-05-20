@@ -4,7 +4,7 @@
 RampGen::RampGen()
 {
 	_v1 = 0;
-	SetPointsPerPeriod(100);
+	//SetPointsPerPeriod(100);
 };
 
 void RampGen::SetFrequ(float cfrequ)
@@ -19,9 +19,9 @@ void RampGen::SetPointsPerPeriod(float cpoints)
 
 void RampGen::CalcOneStep()
 {
-	_v1 = (_v1 + _increment);
+	_v1 = _v1 + _increment;
 	if (_v1 > 1)
-		_v1 = - 1.0f + (_v1 - 1.0f);
+		_v1 = -1.0f + (_v1 - 1.0f);
 };
 
 
@@ -31,7 +31,7 @@ RectGen::RectGen()
 {
 	_v1 = 0;
 	_thr = 0;
-	SetPointsPerPeriod(100);
+	//SetPointsPerPeriod(100);
 };
 
 void RectGen::SetFrequ(float cfrequ)
@@ -56,7 +56,7 @@ void RectGen::CalcOneStep()
 		_signal = -1.0f + (_signal - 1.0f);
 
 	if (_signal > _thr)
-		_v1 = 1;
-	else
 		_v1 = -1;
+	else
+		_v1 = 1;
 };
