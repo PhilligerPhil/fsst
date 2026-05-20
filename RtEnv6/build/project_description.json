@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "RtEnv6",
-    "project_version":    "2a3e6e9-dirty",
+    "project_version":    "5d312c1-dirty",
     "project_path":       "C:/Users/dempi/Desktop/Git/RtEnvLib/RtEnv6",
     "idf_path":           "D:/dempi/espressifIDE/.espressif/v5.5.3/esp-idf",
     "build_dir":          "C:/Users/dempi/Desktop/Git/RtEnvLib/RtEnv6/build",
@@ -1255,7 +1255,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "C:/Users/dempi/Desktop/Git/RtEnvLib/RtEnv6/build/esp-idf/main/libmain.a",
-            "sources": [ "C:/Users/dempi/Desktop/Git/RtEnvLib/RtEnv6/main/Bsp1_Main.cpp", "C:/Users/dempi/Desktop/Git/RtEnvLib/RtEnv6/main/Bsp1_GenModules.cpp" ],
+            "sources": [ "C:/Users/dempi/Desktop/Git/RtEnvLib/RtEnv6/main/Bsp1_Main.cpp", "C:/Users/dempi/Desktop/Git/RtEnvLib/RtEnv6/main/Bsp1_GenModules.cpp", "C:/Users/dempi/Desktop/Git/RtEnvLib/RtEnv6/main/Bsp2_Mean3.cpp" ],
             "include_dirs": [ ".", "../components/dsp", "../components/RtEnvHL/commu", "../components/RtEnvHL/core", "../components/RtEnvHL/led_strip" ]
         },
         "mbedtls": {
